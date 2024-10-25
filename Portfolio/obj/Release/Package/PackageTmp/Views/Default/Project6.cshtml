@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Spaceflowers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="blogs">
+    <div class="content">
+        <h3 style="color: #eee; font-size: 2rem; padding-bottom: 5%; margin-top: 20%;">
+            spaceflowers.pde
+        </h3>
+        <canvas id="pjs4"></canvas>
+        <br /><br /><br />
+        <h4 style="font-size: 1.2rem; margin-top: 1%; padding-bottom: 6%; color: var(--violet-color)">
+            Processing used.
+        </h4>
+        <a href="https://processing.org/" target="_blank" class="download">DOWNLOAD</a>
+        <p style="padding-bottom: 7%; font-size:1.02rem;">
+            <br /><br />
+            <b style="color:#eee">ᴇxᴘʟᴀɴᴀᴛɪᴏɴ </b>
+            <br /><br />
+            Click screen, hold space and see what happens. 👀 <br /> <br /><br />
+            Processing is a visual programming language which has a flexible structure with many libraries it contains. It can run multimedia types smoothly. You can see the animations and source codes I made below.
+        </p>
+        <div class="language-java">
+            <div style="font-size:1rem;">
+                <pre class="line-numbers"><code>
+    int getRandomColor() {
+
+    return color(random(120,255), random(255), random(255));
+    }
+
+
+    void drawFlower(float x, float y, float flowerSize){
+
+    for(int i = 0 ; i< 7; i++)
+
+    strokeWeight(flowerSize);
+    stroke(getRandomColor());
+
+    translate(x,y);
+    for(int i=0; i< 7;i++){
+
+    rotate(TWO_PI/7);
+    line(0, 0,5 *flowerSize,0);
+
+    }
+
+    strokeWeight(0);
+    fill(getRandomColor());
+    ellipse(0,0,3.5 * flowerSize,3.5 * flowerSize);
+    }
+
+    void setup() {
+    size(600,600);
+    background(#1d1f20);
+
+    }
+
+    void draw(){
+
+    if(keyPressed == true)
+    drawFlower(random(width),random(height),random(5,10));
+
+
+
+    }
+</code></pre>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</section>

@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Snowflake";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="blogs">
+    <div class="content">
+        <h3 style="color: #eee; font-size: 2rem; padding-bottom: 5%; margin-top: 20%;">
+            Snowflake
+        </h3>
+        <canvas id="pjs3"></canvas>
+        <br /><br /><br />
+        <h4 style="font-size: 1.2rem; margin-top: 1%; padding-bottom: 6%; color: var(--violet-color)">
+            Processing used.
+        </h4>
+        <a href="https://processing.org/" target="_blank" class="download">DOWNLOAD</a>
+        <p style="padding-bottom: 7%; font-size:1.02rem;">
+            <br /><br />
+            <b style="color:#eee">ᴇxᴘʟᴀɴᴀᴛɪᴏɴ </b>
+            <br /><br />
+            Processing is a visual programming language which has a flexible structure with many libraries it contains. It can run multimedia types smoothly. You can see the animations and source codes I made below.
+        </p>
+        <div class="language-java">
+            <div style="font-size:1rem;">
+                <pre class="line-numbers"><code>
+    void setup()
+    {
+    size(500, 500);
+    for(int i = 0; i < flakes.length; i++)
+    {
+    flakes[i] = new SnowFlake();
+    }
+    }
+
+    SnowFlake[] flakes = new SnowFlake[50];
+
+    void draw()
+    {
+    background(#1d1f20);
+    //translate(width/2, height/2);
+
+    for(int i = 0; i < flakes.length; i++)
+    {
+    flakes[i].drawFlake();
+    }
+    }
+</code></pre>
+            </div>
+        </div> <br /><br />
+        <div class="language-java">
+            <div style="font-size:1rem;">
+                <pre class="line-numbers"><code>
+    class SnowFlake
+    {
+    float speed, r, g, b, alpha, size, x, y;
+
+    public SnowFlake()
+    {
+    initializeRandoms();
+    }
+
+    void initializeRandoms()
+    {
+    speed = random(1, 8);
+    alpha = random(20, 100);
+    size = random(3, 10);
+    x = random(-20, width + 20);
+    y = random(-100, -20);
+    r = random(256);
+    g = random(256);
+    b = random(256);
+    }
+
+    void drawFlake()
+    {
+    stroke(r, g, b, alpha);
+    pushMatrix();
+    translate(x, y);
+    scale(size); //(10, 10)
+
+    for (int i= 0; i < 6; i++)
+    {
+    pushMatrix();
+    rotate(radians(i * 60));
+    drawVertices();
+    scale(1, -1); //flip
+    drawVertices();
+    popMatrix();
+    }
+    popMatrix();
+    y += speed;
+    if(y > height + 100)
+    initializeRandoms();
+    }
+
+    void drawVertices()
+    {
+    beginShape();
+
+    vertex(0, 0.2);
+    vertex(2, 0.2);
+    vertex(3, 1.7);
+    vertex(3.5, 1.7);
+    vertex(2.5, 0.2);
+
+    vertex(4.0, 0.2);
+
+    vertex(4.8, 1.2);
+    vertex(5.3, 1.2);
+    vertex(4.3, 0.2);
+
+    vertex(6.0, 0.2);
+    vertex(6.0, 0);
+
+    endShape(CLOSE);
+    }
+    }
+</code></pre>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</section>
+

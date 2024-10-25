@@ -1,0 +1,219 @@
+﻿
+@{
+    ViewBag.Title = "Request List & Commands";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section id="blogs">
+    <div class="content">
+        <h3 style="color: #eee; font-size: 2rem; padding-bottom: 5%; margin-top: 20%;">
+            Request List & Commands Guide-Book
+        </h3>
+        <h4 style="font-size: 1.2rem; margin-top: 1%; padding-bottom: 2%; color: var(--violet-color)">
+            Visual Studio Code and Postman used.
+        </h4>
+        <p style="padding-bottom: 7%; font-size:1.02rem;">
+            <br /><br />
+            <b style="color:#eee">ᴇxᴘʟᴀɴᴀᴛɪᴏɴ </b>
+            <br /><br />
+            db.json file contains students and their projects. Filtering was applied for students and projects, new items were created, specified feature was deleted and updated.
+            <br /><br />
+            <b style="color:#eee">ɴᴏᴛɪᴄᴇ</b><br /><br />
+            When the PUT command is used, it has been observed that all the remaining features are deleted, except for that item. Therefore, the PATCH command is used for update.
+        </p>
+        <p>
+            <b style="color:#eee">
+                sᴛᴀɢᴇs
+            </b>
+            <br /><br />
+            <b style="color: var(--violet-color);">Step 1:</b> Open your <b style="color: var(--violet-color);">Command Prompt</b> (write "cmd"  to Windows Search and enter)
+        </p>
+        <div class="language-bash">
+            <div style="font-size:1rem;">
+                <pre class="line-numbers"><code>cd Desktop
+mkdir FolderName
+cd FolderName
+mkdir FileName
+npm i -g json-server
+code .
+</code></pre>
+            </div>
+        </div>
+        <p style="margin-top: 28px;">
+            <b style="color: var(--violet-color);">Note: </b> When downloading <b style="color: var(--violet-color);">JSON Server</b>, don't forget to download <b style="color: var(--violet-color);">Postman</b>.
+        </p>
+        <p style="margin-top: 28px;">
+            <b style="color: var(--violet-color);">Step 2:  </b> Create a db.json file and insert all the data. (ex: students and their projects)
+        </p>
+        <div class="language-json">
+            <div style="font-size:1rem;">
+                <pre class="line-numbers"><code>{
+  "users": [
+    {
+      "id": 1,
+      "name": "Suay",
+      "age": 24,
+      "school": "BAU"
+    },
+    {
+      "id": 2,
+      "name": "Selin",
+      "age": 24,
+      "school": "ITU"
+    },
+    {
+      "id": 3,
+      "name": "Batuhan",
+      "age": 23,
+      "school": "BAU"
+    },
+    {
+      "id": 4,
+      "name": "Sude",
+      "age": 20,
+      "school": "BAU"
+    },
+    {
+      "id": 5,
+      "name": "Berkay",
+      "age": 20,
+      "school": "ODTU"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Java",
+      "description": "Restaurant Management"
+    },
+    {
+      "id": 2,
+      "title": "C#",
+      "description": "Food Safety Portal"
+    },
+    {
+      "id": 3,
+      "title": "SQL",
+      "description": "Library Management"
+    },
+    {
+      "id": 4,
+      "title": "C++",
+      "description": "Interface Design"
+    },
+    {
+      "id": 5,
+      "title": "Flutter",
+      "description": "Mobile App"
+    }
+  ]
+}
+</code></pre>
+            </div>
+        </div>
+        <p style="margin-top: 28px;">
+            Your localhost will be shown.
+        </p>
+        <div class="language-bash">
+            <div style="font-size:1rem;">
+                <pre class="line-numbers"><code>--watch db.json
+</code></pre>
+            </div>
+        </div>
+        <p style="margin-top: 28px;">
+            <b style="color: var(--violet-color);">Step 3:  </b> Enter your local host to Postman, create collection and create requests in order.
+        </p>
+        <div class="language-js">
+            <div style="font-size:1rem;">
+                <pre class="line-numbers"><code>{
+    {
+    "info": {
+    "_postman_id": "************************************",
+    "name": "Request List",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+    {
+    "name": "User List",
+    "request": {
+    "method": "GET",
+    "header": []
+    },
+    "response": []
+    },
+    {
+    "name": "Project List",
+    "request": {
+    "method": "GET",
+    "header": []
+    },
+    "response": []
+    },
+    {
+    "name": "Update List for User",
+    "request": {
+    "method": "PATCH",
+    "header": []
+    },
+    "response": []
+    },
+    {
+    "name": "Update List for Project",
+    "request": {
+    "method": "PATCH",
+    "header": []
+    },
+    "response": []
+    },
+    {
+    "name": "Add a new item",
+    "request": {
+    "method": "POST",
+    "header": []
+    },
+    "response": []
+    },
+    {
+    "name": "Delete one of the items",
+    "request": {
+    "method": "DELETE",
+    "header": []
+    },
+    "response": []
+    },
+    {
+    "name": "Filter",
+    "request": {
+    "method": "GET",
+    "header": []
+    },
+    "response": []
+    },
+    {
+    "name": "Filter 2",
+    "request": {
+    "method": "GET",
+    "header": []
+    },
+    "response": []
+    }
+    ]
+    }
+</code></pre>
+            </div>
+        </div>
+        <h3 style="color: #eee; font-size: 2rem; padding-bottom: 1%; margin-top: 10%;"> 𝐍𝐨𝐭𝐞s </h3>
+        <p>
+            <br /><br /><b style="color:var(--violet-color);">GET:</b> Gets all of your list. <br /><br />Post: Add a new item to list. For example: write /users and send. A new item with id will be created.<br /><br />
+            <b style="color:var(--violet-color);">PUT:</b> It will update the items you selected, but data will be lost.<br /><br />
+            <b style="color:var(--violet-color);">PATCH:</b> It only updates the items you selected. No data loss.<br /><br />
+            <b style="color:var(--violet-color);">For PUT & PATCH</b> come to Body, select raw and change Text to JSON. raw section: write "description" : "IOS App" and click send.<br /><br />
+            <b style="color:var(--violet-color);">DELETE</b> For example: write /users/id number<br /><br />
+            <b style="color:var(--violet-color);">GET for filtering:</b> ex: Come to Params, write the parameters you want to display and click send. Or you can write like this: /users?school=BAU<br />  <br />
+        </p>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</section>
+
+

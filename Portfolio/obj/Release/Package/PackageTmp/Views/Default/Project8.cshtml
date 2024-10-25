@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Windmill";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="blogs">
+    <div class="content">
+        <h3 style="color: #eee; font-size: 2rem; padding-bottom: 5%; margin-top: 20%;">
+            wind_mill.pde
+        </h3>
+        <canvas id="pjs6"></canvas>
+        <br /><br /><br />
+        <h4 style="font-size: 1.2rem; margin-top: 1%; padding-bottom: 6%; color: var(--violet-color)">
+            Processing used.
+        </h4>
+        <a href="https://processing.org/" target="_blank" class="download">DOWNLOAD</a>
+        <p style="padding-bottom: 7%; font-size:1.02rem;">
+            <br /><br />
+            <b style="color:#eee">ᴇxᴘʟᴀɴᴀᴛɪᴏɴ </b>
+            <br /><br />
+            Processing is a visual programming language which has a flexible structure with many libraries it contains. It can run multimedia types smoothly. You can see the animations and source codes I made below.
+        </p>
+        <div class="language-java">
+            <div style="font-size:1rem;">
+                <pre class="line-numbers"><code>
+    void setup()
+    {
+    size(500, 500);
+    stroke(255);
+    }
+    int angle = 0;
+
+
+
+    void draw()
+    {
+    background(#1d1f20);
+    strokeWeight(8);
+    point(width/2, height/2);
+    ellipse(250, 375, 5, 150);
+    translate(width/2, height/2);
+    rotate(radians(angle++));
+    translate(-width/2, -height/2);
+    drawLeaves();
+    }
+
+    void drawLeaves()
+    {
+    for(int i = 0 ; i< 6; i++)
+    {
+    translate(width/2, height/2);
+    rotate(radians(60));
+    translate(-width/2, -height/2);
+    ellipse(325, 250, 100, 10);
+    }
+    }
+</code></pre>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</section>
+

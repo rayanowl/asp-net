@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Pendulum";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="blogs">
+    <div class="content">
+        <h3 style="color: #eee; font-size: 2rem; padding-bottom: 5%; margin-top: 20%;">
+            pendulum.pde
+        </h3>
+        <canvas id="pjs"></canvas>
+        <br /><br /><br />
+        <h4 style="font-size: 1.2rem; margin-top: 1%; padding-bottom: 6%; color: var(--violet-color)">
+            Processing used.
+        </h4>
+        <a href="https://processing.org/" target="_blank" class="download">DOWNLOAD</a>
+        <p style="padding-bottom: 7%; font-size:1.02rem;">
+            <br /><br />
+            <b style="color:#eee">ᴇxᴘʟᴀɴᴀᴛɪᴏɴ </b>
+            <br /><br />
+            Processing is a visual programming language which has a flexible structure with many libraries it contains. It can run multimedia types smoothly. You can see the animations and source codes I made below.
+        </p>
+        <div class="language-java">
+            <div style="font-size:1rem;">
+                <pre class="line-numbers">
+<code>
+    void setup()
+    {
+    size(400, 400);
+    background(#1d1f20);
+    }
+    int r = 100;
+    int ballX = 0;
+    int dir = 1;
+    void draw()
+    {
+    background(#1d1f20);
+    translate(20, 0);
+    drawCurve();
+    strokeWeight(50);
+    point(ballX, 200 + dir * r * sin(radians(ballX)));
+    strokeWeight(1);
+    //line(width/2, 0, ballX, 200 + r * sin(radians(ballX)));
+    ballX += dir*3;
+    if(ballX > 360 || ballX < 0)
+    {
+    dir *= -1;
+    }
+    }
+
+    void drawCurve()
+    {
+    stroke(0);
+    line(0, 200, 360, 200);
+    stroke(255, 0, 0);
+    for(int x = 0; x < 360; x++)
+    {
+    point(x, 200 + r * sin(radians(x)));
+    point(x, 200 - r * sin(radians(x)));
+    }
+    }
+</code>
+</pre>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</section>
+

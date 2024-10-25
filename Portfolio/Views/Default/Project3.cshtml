@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Flower";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="blogs">
+    <div class="content">
+        <h3 style="color: #eee; font-size: 2rem; padding-bottom: 5%; margin-top: 20%;">
+            Flower
+        </h3>
+        <canvas id="pjs1"></canvas>
+        <br /><br /><br />
+        <h4 style="font-size: 1.2rem; margin-top: 1%; padding-bottom: 6%; color: var(--violet-color)">
+            Processing used.
+        </h4>
+        <a href="https://processing.org/" target="_blank" class="download">DOWNLOAD</a>
+        <p style="padding-bottom: 7%; font-size:1.02rem;">
+            <br /><br />
+            <b style="color:#eee">ᴇxᴘʟᴀɴᴀᴛɪᴏɴ </b>
+            <br /><br />
+            Processing is a visual programming language which has a flexible structure with many libraries it contains. It can run multimedia types smoothly. You can see the animations and source codes I made below.
+        </p>
+        <div class="language-java">
+            <div style="font-size:1rem;">
+                <pre class="line-numbers">
+<code>
+// Petal.
+// Registers when drawing is at the center and changes color then
+//The constants needed in the equations for the “rose”
+final float K = 4; //The factor that controls the number of “petals”
+final float RATE = 0.02; //The change in t each frame. Controls speed and smoothness.
+final float ROSE_RADIUS = 200; //The radius, in pixels, of the “rose”
+
+ //The “state” variables that remember what’s happening
+float t = 0; //The “parameter” t which will slowly change from 0 to 2PI
+float prevX; //What were x…
+float prevY; //…and y last time?
+
+boolean changeColor = true;//the line is moving toward the center, otherwise it’s moving away from center
+boolean allowed = true;
+
+void setup() {
+size(500, 500); //Usual window size
+background(#1d1f20); //Use a black background, and…
+strokeWeight(2); //nice thick lines
+
+//Precalculate the first point (with t=0). This must be done
+//after the size command because width and height are needed.
+prevX=width/2+ROSE_RADIUS;
+prevY=height/2;
+}
+
+void draw() {
+//Calculate the new point
+float x = cos(K*t)*cos(t)*ROSE_RADIUS+width/2;
+float y = cos(K*t)*sin(t)*ROSE_RADIUS+height/2;
+
+// When we are at the center we set a marker
+//if (x == width/2 && y == height/2) {
+if (allowed && dist(x, y, width/2, height/2)<8.92) {changeColor=true;allowed=false;}
+if (changeColor) {
+if (random(1)>0.9)
+stroke(random(222, 255), random(0, 25), random(0, 5));
+else
+stroke(random(100, 255), random(90, 255), random(100, 255));
+changeColor = false;
+}
+
+if (dist(x, y, width/2, height/2)>144.92) {
+allowed = true;
+}
+
+//draw the next line
+line(prevX, prevY, x, y);
+
+//Keep all the information needed for next time
+prevX = x;
+prevY = y;
+
+//Advance t
+t += RATE;
+
+}//draw
+</code>
+</pre>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</section>
+

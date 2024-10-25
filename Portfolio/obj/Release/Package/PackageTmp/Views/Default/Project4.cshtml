@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Dots";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="blogs">
+    <div class="content">
+        <h3 style="color: #eee; font-size: 2rem; padding-bottom: 5%; margin-top: 20%;">
+            Dots
+        </h3>
+        <canvas id="pjs2"></canvas>
+        <br /><br /><br />
+        <h4 style="font-size: 1.2rem; margin-top: 1%; padding-bottom: 6%; color: var(--violet-color)">
+            Processing used.
+        </h4>
+        <a href="https://processing.org/" target="_blank" class="download">DOWNLOAD</a>
+        <p style="padding-bottom: 7%; font-size:1.02rem;">
+            <br /><br />
+            <b style="color:#eee">ᴇxᴘʟᴀɴᴀᴛɪᴏɴ </b>
+            <br /><br />
+            Processing is a visual programming language which has a flexible structure with many libraries it contains. It can run multimedia types smoothly. You can see the animations and source codes I made below.
+        </p>
+        <div class="language-java">
+            <div style="font-size:1rem;">
+                <pre class="line-numbers"><code>
+    int radius = 200;
+
+    void setup() {
+    background(#1d1f20);
+    size(500, 500);
+    frameRate(1000);
+    strokeWeight(3);
+    smooth();
+    }
+
+    void draw() {
+    translate(width/2, height/2);
+    float q = random(1) * (TWO_PI);
+    float r = sqrt(random(1));
+    float x = (radius * r) * cos(q);
+    float y = (radius * r) * sin(q);
+    point(x, y);
+    }
+</code></pre>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</section>
+
